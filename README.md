@@ -1,3 +1,4 @@
+[![virtualLibraryAPI](https://github.com/danielso2007/projeto_checkstyle_pmd_jacoco/actions/workflows/maven-publish.yml/badge.svg)](https://github.com/danielso2007/projeto_checkstyle_pmd_jacoco/actions/workflows/maven-publish.yml)
 [![codecov](https://codecov.io/gh/danielso2007/projeto_checkstyle_pmd_jacoco/branch/develop/graph/badge.svg)](https://codecov.io/gh/danielso2007/projeto_checkstyle_pmd_jacoco)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=danielso2007_projeto_checkstyle_pmd_jacoco&metric=alert_status)](https://sonarcloud.io/dashboard?id=danielso2007_projeto_checkstyle_pmd_jacoco)
 ![GitHub package version](https://img.shields.io/github/package-json/v/danielso2007/projeto_checkstyle_pmd_jacoco.svg)
