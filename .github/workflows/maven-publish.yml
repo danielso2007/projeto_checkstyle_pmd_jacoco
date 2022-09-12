@@ -39,7 +39,6 @@ jobs:
       run: |
         mvn -q -am checkstyle:check
   PMD:
-    needs: Checktyle
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@main
@@ -71,26 +70,8 @@ jobs:
       run: |
         mvn -q -am clean verify
         bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }}
-  Sonar:
-    needs: Test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@main
-      - name: Set up JDK 11
-        uses: actions/setup-java@v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          java-version: '11'
-          distribution: 'adopt'
-          architecture: x64
-          cache: maven
-      - name: Passando informações para o Sonar
-        run: |
-          mvn -q -am clean test jacoco:report sonar:sonar
   Build:
-    needs: Sonar
+    needs: Test
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@main
