@@ -32,7 +32,9 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '11'
-        architecture: 'adopt'
+        distribution: 'adopt'
+        architecture: x64
+        cache: maven
     - name: Verificando estilo do código
       run: |
         mvn -q -am checkstyle:check
@@ -45,7 +47,9 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '11'
-        architecture: 'adopt'
+        distribution: 'adopt'
+        architecture: x64
+        cache: maven
     - name: Análise estática de código com PMD
       run: |
         mvn -q -am pmd:check
@@ -61,7 +65,9 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       with:
         java-version: '11'
-        architecture: 'adopt'
+        distribution: 'adopt'
+        architecture: x64
+        cache: maven
     - name: Test com verificação de cobertura
       run: |
         mvn -q -am clean verify
@@ -75,7 +81,14 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '11'
-        architecture: 'adopt'
+        distribution: 'adopt'
+        architecture: x64
+        cache: maven
     - name: Build with Maven
       run: |
         mvn -q -am clean package install
+    - run: mkdir staging && cp target/*.jar staging
+    - uses: actions/upload-artifact@main
+      with:
+        name: Package
+        path: staging
