@@ -1,11 +1,11 @@
-name: virtualLibraryAPI
+name: projeto_checkstyle_pmd_jacoco
 
 on:
   # Acione o fluxo de trabalho na solicitação push ou pull,
   # mas apenas para a ramificação principal.
   push:
     branches:
-    - master
+    - main
     - develop
     - 'release/**'
     tags:        
@@ -17,7 +17,7 @@ on:
     - '**.yml'
   pull_request:
     branches:
-    - master
+    - main
     - develop
     - 'release/**'
     tags:        
