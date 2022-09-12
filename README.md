@@ -1,17 +1,29 @@
+[![codecov](https://codecov.io/gh/danielso2007/projeto_checkstyle_pmd_jacoco/branch/develop/graph/badge.svg)](https://codecov.io/gh/danielso2007/projeto_checkstyle_pmd_jacoco)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=danielso2007_projeto_checkstyle_pmd_jacoco&metric=alert_status)](https://sonarcloud.io/dashboard?id=danielso2007_projeto_checkstyle_pmd_jacoco)
+![GitHub package version](https://img.shields.io/github/package-json/v/danielso2007/projeto_checkstyle_pmd_jacoco.svg)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/danielso2007/projeto_checkstyle_pmd_jacoco.svg)](https://github.com/danielso2007/projeto_checkstyle_pmd_jacoco/pulls)
+[![GitHub issues](https://img.shields.io/github/issues/danielso2007/projeto_checkstyle_pmd_jacoco.svg)](https://github.com/danielso2007/projeto_checkstyle_pmd_jacoco/issues?q=is%3Aopen+is%3Aissue)
+![GitHub last commit](https://img.shields.io/github/last-commit/danielso2007/projeto_checkstyle_pmd_jacoco.svg)
+[![GitHub issue/pull request author](https://img.shields.io/github/issues/detail/u/danielso2007/projeto_checkstyle_pmd_jacoco/1.svg)](https://github.com/danielso2007/projeto_checkstyle_pmd_jacoco/pulls)
+![GitHub contributors](https://img.shields.io/github/contributors/danielso2007/projeto_checkstyle_pmd_jacoco.svg)
+![GitHub top language](https://img.shields.io/github/languages/top/danielso2007/projeto_checkstyle_pmd_jacoco.svg)
+[![GitHub All Releases](https://img.shields.io/github/downloads/danielso2007/projeto_checkstyle_pmd_jacoco/total.svg)](https://github.com/danielso2007/projeto_checkstyle_pmd_jacoco/archive/main.zip)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+
 <p align="center">
   <h3 align="center">Padrões de projeto criacionais</h3>
 
   <p align="center">
     O objetivo desse projeto é apresentar as melhores ferramentas para ajudar programadores a seguir o melhro padrão de um bom desenvolvimento de software.
     <br />
-    <a href="https://github.com/danielso2007/projeto-ifood-quarkus-microservice"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/danielso2007/projeto_checkstyle_pmd_jacoco"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/danielso2007/projeto-ifood-quarkus-microservice">View Demo</a>
+    <a href="https://github.com/danielso2007/projeto_checkstyle_pmd_jacoco">View Demo</a>
     ·
-    <a href="https://github.com/danielso2007/projeto-ifood-quarkus-microservice/issues">Report Bug</a>
+    <a href="https://github.com/danielso2007/projeto_checkstyle_pmd_jacoco/issues">Report Bug</a>
     ·
-    <a href="https://github.com/danielso2007/projeto-ifood-quarkus-microservice/issues">Request Feature</a>
+    <a href="https://github.com/danielso2007/projeto_checkstyle_pmd_jacoco/issues">Request Feature</a>
   </p>
 </p>
 
@@ -39,6 +51,13 @@
             <li><a href="#resultado-em-xml">Resultado em XML</a></li>
             <li><a href="#resultado-em-html">Resultado em HTML</a></li>
         </ul>
+      </ul>
+    </li>
+    <li>
+      <a href="#cobertura-de-código">Cobertura de código</a>
+      <ul>
+        <li><a href="#biblioteca-de-cobertura-de-código-java-jaCoCo">Biblioteca de Cobertura de Código Java JaCoCo</a></li>
+        <li><a href="#executando-a-cobertura-de-código">Executando a cobertura de código</a></li>
       </ul>
     </li>
   </ol>
