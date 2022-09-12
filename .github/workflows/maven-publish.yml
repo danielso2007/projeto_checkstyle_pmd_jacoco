@@ -39,7 +39,6 @@ jobs:
       run: |
         mvn -q -am checkstyle:check
   PMD:
-    needs: Checktyle
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@main
