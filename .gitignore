@@ -7,6 +7,7 @@ target/
 docker_database/data
 docker_database/dataPgadmin4
 node_modules
+sonar.projectKey
 
 ### STS ###
 .apt_generated

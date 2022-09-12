@@ -1,6 +1,6 @@
 [![virtualLibraryAPI](https://github.com/danielso2007/projeto_checkstyle_pmd_jacoco/actions/workflows/maven-publish.yml/badge.svg)](https://github.com/danielso2007/projeto_checkstyle_pmd_jacoco/actions/workflows/maven-publish.yml)
 [![codecov](https://codecov.io/gh/danielso2007/projeto_checkstyle_pmd_jacoco/branch/develop/graph/badge.svg)](https://codecov.io/gh/danielso2007/projeto_checkstyle_pmd_jacoco)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=danielso2007_projeto_checkstyle_pmd_jacoco&metric=alert_status)](https://sonarcloud.io/dashboard?id=danielso2007_projeto_checkstyle_pmd_jacoco)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=danielso2007_projeto_checkstyle_pmd_jacoco&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=danielso2007_projeto_checkstyle_pmd_jacoco)
 ![GitHub package version](https://img.shields.io/github/package-json/v/danielso2007/projeto_checkstyle_pmd_jacoco.svg)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/danielso2007/projeto_checkstyle_pmd_jacoco.svg)](https://github.com/danielso2007/projeto_checkstyle_pmd_jacoco/pulls)
 [![GitHub issues](https://img.shields.io/github/issues/danielso2007/projeto_checkstyle_pmd_jacoco.svg)](https://github.com/danielso2007/projeto_checkstyle_pmd_jacoco/issues?q=is%3Aopen+is%3Aissue)
