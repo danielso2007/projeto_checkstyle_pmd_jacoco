@@ -1,0 +1,107 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@danielso2007 
+danielso2007
+/
+virtualLibraryAPI
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Security
+Insights
+Settings
+virtualLibraryAPI/.github/workflows/maven.yml
+@danielso2007
+danielso2007 refactor: Removendo o sonarcloud do Action.
+Latest commit fb9fd83 on 27 Apr 2020
+ History
+ 1 contributor
+55 lines (53 sloc)  1.19 KB
+
+name: virtualLibraryAPI
+
+on:
+  # Acione o fluxo de trabalho na solicitação push ou pull,
+  # mas apenas para a ramificação principal.
+  push:
+    branches:
+    - master
+    - develop
+    - 'release/**'
+    tags:        
+    - v*
+    paths-ignore:
+    - '**.md'
+    - '**.sh'
+    - '**.json'
+    - '**.yml'
+  pull_request:
+    branches:
+    - master
+    - develop
+    - 'release/**'
+    tags:        
+    - v*
+
+jobs:
+  Checktyle:
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@master
+      - name: Setup java
+        uses: joschi/setup-jdk@v1
+        with:
+          java-version: 'openjdk11'
+          architecture: 'x64'
+      - name: Verificando estilo do código
+        run: |
+          mvn -q -am checkstyle:check
+  PMD:
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@master
+      - name: Setup java
+        uses: joschi/setup-jdk@v1
+        with:
+          java-version: 'openjdk11'
+          architecture: 'x64'
+      - name: Análise estática de código com PMD
+        run: |
+          mvn -q -am pmd:check
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Setup java
+      uses: joschi/setup-jdk@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      with:
+        java-version: 'openjdk11'
+        architecture: 'x64'
+    - name: Test com verificação de cobertura
+      run: |
+        mvn -q -am clean verify
+        bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }}
+  Build:
+    needs: Test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Setup java
+      uses: joschi/setup-jdk@v1
+      with:
+        java-version: 'openjdk11'
+        architecture: 'x64'
+    - name: Build with Maven
+      run: |
+        mvn -q -am clean package install
