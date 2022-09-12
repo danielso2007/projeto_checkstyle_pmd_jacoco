@@ -25,33 +25,35 @@ on:
 
 jobs:
   Checktyle:
-      runs-on: ubuntu-latest
-      steps:
-      - uses: actions/checkout@master
-      - name: Setup java
-        uses: joschi/setup-jdk@v1
-        with:
-          java-version: 'openjdk11'
-          architecture: 'x64'
-      - name: Verificando estilo do código
-        run: |
-          mvn -q -am checkstyle:check
-  PMD:
-      runs-on: ubuntu-latest
-      steps:
-      - uses: actions/checkout@master
-      - name: Setup java
-        uses: joschi/setup-jdk@v1
-        with:
-          java-version: 'openjdk11'
-          architecture: 'x64'
-      - name: Análise estática de código com PMD
-        run: |
-          mvn -q -am pmd:check
-  Test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@main
+    - name: Setup java
+      uses: joschi/setup-jdk@v1
+      with:
+        java-version: 'openjdk11'
+        architecture: 'x64'
+    - name: Verificando estilo do código
+      run: |
+        mvn -q -am checkstyle:check
+  PMD:
+    needs: Checktyle
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@main
+    - name: Setup java
+      uses: joschi/setup-jdk@v1
+      with:
+        java-version: 'openjdk11'
+        architecture: 'x64'
+    - name: Análise estática de código com PMD
+      run: |
+        mvn -q -am pmd:check
+  Test:
+    needs: PMD
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@main
     - name: Setup java
       uses: joschi/setup-jdk@v1
       env:
@@ -68,7 +70,7 @@ jobs:
     needs: Test
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@main
     - name: Setup java
       uses: joschi/setup-jdk@v1
       with:
